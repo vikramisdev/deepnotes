@@ -9,12 +9,214 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16ebaa8d-e712-4220-8e4e-1de46828b49c" name="Changes" comment="update" />
+    <list default="true" id="16ebaa8d-e712-4220-8e4e-1de46828b49c" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibs$AccompanistLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibs$AccompanistNavigationLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidPluginAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxActivityLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxComposeLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxCoreLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxEspressoLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxLifecycleLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxLifecycleRuntimeLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxRoomLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxUiLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxUiTestLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibs$AndroidxUiToolingLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibs$BundleAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibs$ComposePluginAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibs$JetbrainsKotlinPluginAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibs$JetbrainsPluginAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibs$PluginAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibs$VersionAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibs.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AccompanistLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AccompanistNavigationLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidPluginAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxActivityLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxComposeLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxCoreLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxEspressoLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxLifecycleLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxLifecycleRuntimeLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxRoomLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxUiLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxUiTestLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$AndroidxUiToolingLibraryAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$BundleAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$ComposePluginAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$JetbrainsKotlinPluginAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$JetbrainsPluginAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$PluginAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock$VersionAccessors.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/8.7/dependencies-accessors/c33b9fea53161e64b0aacdd76e7fa2bb80923f5b/classes/org/gradle/accessors/dm/LibrariesForLibsInPluginsBlock.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt$lambda-6$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/NoteEditorKt$NoteEditor$3$1$2$1$1.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/NoteEditorKt$NoteEditor$3$1$2.dex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt$lambda-6$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/NoteEditorKt$NoteEditor$3$1$2$1$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/NoteEditorKt$NoteEditor$3$1$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/ksp/debug/java/com/vikram/deepnotes/data/local/NoteDao_Impl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/ksp/debug/java/com/vikram/deepnotes/data/local/NoteDao_Impl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/apk/debug/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/10/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/10/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/6/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/dex/debug/mergeProjectDexDebug/6/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/mergeDebugResources/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/packageDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/debug/packageDebugResources/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/vikram/deepnotes/data/local/NoteDao_Impl$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/vikram/deepnotes/data/local/NoteDao_Impl$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/vikram/deepnotes/data/local/NoteDao_Impl$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/vikram/deepnotes/data/local/NoteDao_Impl$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/vikram/deepnotes/data/local/NoteDao_Impl.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/vikram/deepnotes/data/local/NoteDao_Impl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/local_only_symbol_list/debug/parseDebugLocalResources/R-def.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/local_only_symbol_list/debug/parseDebugLocalResources/R-def.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/processDebugMainManifest/manifest-merger-blame-debug-report.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/manifest_merge_blame_file/debug/processDebugMainManifest/manifest-merger-blame-debug-report.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/processDebugManifest/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_manifests/debug/processDebugManifest/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/mergeDebugResources.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/mergeDebugResources.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/single/mergeDebugResources.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/single/mergeDebugResources.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/processDebugResources/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/processDebugResources/out/resources-debug.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/AboutKt$About$1$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/AboutKt$About$1$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/AboutKt.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/AboutKt.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt$lambda-1$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt$lambda-1$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt$lambda-2$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt$lambda-2$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt$lambda-3$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt$lambda-3$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt$lambda-4$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt$lambda-4$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt$lambda-5$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt$lambda-5$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/HomeKt$Home$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/HomeKt$Home$2.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/HomeKt$Home$3$1$4.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/HomeKt$Home$3$1$4.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/HomeKt$Home$3$1$5.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/HomeKt$Home$3$1$5.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/HomeKt$Home$3$1$6$1$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/HomeKt$Home$3$1$6$1$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/HomeKt$Home$3$1$6.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/HomeKt$Home$3$1$6.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/HomeKt$Home$3$1$8$1$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/HomeKt$Home$3$1$8$1$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/HomeKt$Home$3.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/HomeKt$Home$3.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/HomeKt$ShowProfileDialog$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/HomeKt$ShowProfileDialog$2.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/HomeKt.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/HomeKt.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/MainActivityKt$Root$1$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/MainActivityKt$Root$1$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/MainActivityKt.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/MainActivityKt.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/NoteEditorKt$NoteEditor$2$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/NoteEditorKt$NoteEditor$2$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/NoteEditorKt$NoteEditor$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/NoteEditorKt$NoteEditor$2.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/NoteEditorKt$NoteEditor$3$1$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/NoteEditorKt$NoteEditor$3$1$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/NoteEditorKt$NoteEditor$3.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/NoteEditorKt$NoteEditor$3.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/NoteEditorKt$insertOrUpdateNote$1$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/NoteEditorKt$insertOrUpdateNote$1$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/NoteEditorKt$insertOrUpdateNote$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/NoteEditorKt$insertOrUpdateNote$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/NoteEditorKt$insertOrUpdateNote$2$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/NoteEditorKt$insertOrUpdateNote$2$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/NoteEditorKt$insertOrUpdateNote$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/NoteEditorKt$insertOrUpdateNote$2.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/NoteEditorKt.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/NoteEditorKt.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/NoteEditorProps.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/NoteEditorProps.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/SettingsKt$Settings$1$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/SettingsKt$Settings$1$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/SettingsKt.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/SettingsKt.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/data/local/NoteDao.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/data/local/NoteDao.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/data/local/NoteDao_Impl$4.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/data/local/NoteDao_Impl$4.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/data/local/NoteDao_Impl$5.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/data/local/NoteDao_Impl$5.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/data/local/NoteDao_Impl.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/data/local/NoteDao_Impl.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/ui/theme/ThemeKt.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/com/vikram/deepnotes/ui/theme/ThemeKt.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/processDebugResources/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/runtime_symbol_list/debug/processDebugResources/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/stable_resource_ids_file/debug/processDebugResources/stableIds.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/stable_resource_ids_file/debug/processDebugResources/stableIds.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/processDebugResources/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/symbol_list_with_package_name/debug/processDebugResources/package-aware-r.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-attributes.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/package-parts.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/counters.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/counters.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/file-to-id.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/id-to-file.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/caches-jvm/lookups/lookups.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/cacheable/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/classpath-snapshot/shrunk-classpath-snapshot.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/classpath-snapshot/shrunk-classpath-snapshot.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/local-state/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kotlin/compileDebugKotlin/local-state/build-history.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kspCaches/debug/backups/java/byRounds/1/com/vikram/deepnotes/data/local/NoteDao_Impl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kspCaches/debug/backups/java/byRounds/1/com/vikram/deepnotes/data/local/NoteDao_Impl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kspCaches/debug/classLookups/file-to-id.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kspCaches/debug/classLookups/file-to-id.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kspCaches/debug/classLookups/file-to-id.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kspCaches/debug/classLookups/file-to-id.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kspCaches/debug/classLookups/file-to-id.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kspCaches/debug/classLookups/file-to-id.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kspCaches/debug/classLookups/id-to-file.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kspCaches/debug/classLookups/id-to-file.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kspCaches/debug/classLookups/id-to-file.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kspCaches/debug/classLookups/id-to-file.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kspCaches/debug/classLookups/lookups.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kspCaches/debug/classLookups/lookups.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kspCaches/debug/classLookups/lookups.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kspCaches/debug/classLookups/lookups.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kspCaches/debug/classLookups/lookups.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kspCaches/debug/classLookups/lookups.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kspCaches/debug/classLookups/lookups.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kspCaches/debug/classLookups/lookups.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kspCaches/debug/classpath-structure.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kspCaches/debug/classpath-structure.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kspCaches/debug/symbolLookups/file-to-id.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kspCaches/debug/symbolLookups/file-to-id.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kspCaches/debug/symbolLookups/file-to-id.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kspCaches/debug/symbolLookups/file-to-id.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kspCaches/debug/symbolLookups/file-to-id.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kspCaches/debug/symbolLookups/file-to-id.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kspCaches/debug/symbolLookups/id-to-file.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kspCaches/debug/symbolLookups/id-to-file.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kspCaches/debug/symbolLookups/id-to-file.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kspCaches/debug/symbolLookups/id-to-file.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kspCaches/debug/symbolLookups/lookups.tab" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kspCaches/debug/symbolLookups/lookups.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kspCaches/debug/symbolLookups/lookups.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kspCaches/debug/symbolLookups/lookups.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kspCaches/debug/symbolLookups/lookups.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kspCaches/debug/symbolLookups/lookups.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/kspCaches/debug/symbolLookups/lookups.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/kspCaches/debug/symbolLookups/lookups.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/AboutKt$About$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/AboutKt$About$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/AboutKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/AboutKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/ComposableSingletons$AboutKt$lambda-1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/ComposableSingletons$AboutKt$lambda-1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/ComposableSingletons$AboutKt$lambda-2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/ComposableSingletons$AboutKt$lambda-2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/ComposableSingletons$AboutKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/ComposableSingletons$AboutKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt$lambda-1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt$lambda-1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt$lambda-2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt$lambda-2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt$lambda-3$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt$lambda-3$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt$lambda-4$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt$lambda-4$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt$lambda-5$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt$lambda-5$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/ComposableSingletons$NoteEditorKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/NoteEditorKt$NoteEditor$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/NoteEditorKt$NoteEditor$2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/NoteEditorKt$NoteEditor$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/NoteEditorKt$NoteEditor$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/NoteEditorKt$NoteEditor$3$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/NoteEditorKt$NoteEditor$3$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/NoteEditorKt$NoteEditor$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/NoteEditorKt$NoteEditor$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/NoteEditorKt$insertOrUpdateNote$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/NoteEditorKt$insertOrUpdateNote$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/NoteEditorKt$insertOrUpdateNote$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/NoteEditorKt$insertOrUpdateNote$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/NoteEditorKt$insertOrUpdateNote$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/NoteEditorKt$insertOrUpdateNote$2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/NoteEditorKt$insertOrUpdateNote$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/NoteEditorKt$insertOrUpdateNote$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/NoteEditorKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/NoteEditorKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/NoteEditorProps.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/NoteEditorProps.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/data/local/NoteDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/tmp/kotlin-classes/debug/com/vikram/deepnotes/data/local/NoteDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vikram/deepnotes/About.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/vikram/deepnotes/About.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vikram/deepnotes/NoteEditor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/vikram/deepnotes/NoteEditor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/vikram/deepnotes/data/local/NoteDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/vikram/deepnotes/data/local/NoteDao.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" show_ignored="true" />
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
@@ -52,12 +254,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;vikramisdev&quot;
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "history": [
+    {
+      "assignee": "vikramisdev"
+    }
+  ],
+  "lastFilter": {
+    "assignee": "vikramisdev"
   }
-}</component>
+}]]></component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/vikramisdev/deepnotes.git&quot;,
@@ -93,6 +299,7 @@
     "DEBUGGABLE_PROCESS": "app.lawnchair.debug",
     "DEBUGGER_ID": "Auto",
     "PROJECT_TRUSTED_KEY": "true",
+    "ResourceManagerPrefKey.ResourceType": "NAVIGATION",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
@@ -103,7 +310,7 @@
     "com.google.services.firebase.aqiPopupShown": "true",
     "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/vs423/AndroidStudioProjects/deepnotes/app/src/main/res/mipmap-mdpi",
+    "last_opened_file_path": "C:/Users/vs423/AndroidStudioProjects/deepnotes/app/src/main/res/drawable",
     "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   },
@@ -115,6 +322,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vs423\AndroidStudioProjects\deepnotes\app\src\main\res\drawable" />
       <recent name="C:\Users\vs423\AndroidStudioProjects\deepnotes\app\src\main\res\mipmap-mdpi" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -225,8 +433,33 @@
       <option name="project" value="LOCAL" />
       <updated>1728554434617</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update">
+      <option name="closed" value="true" />
+      <created>1728554992476</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1728554992476</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

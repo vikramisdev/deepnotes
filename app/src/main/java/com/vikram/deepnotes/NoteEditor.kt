@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.Icon
@@ -50,13 +51,20 @@ data class NoteEditorProps(
     var context: Context,
     var updating: Boolean = false,
     var navController: NavController,
-    var db: AppDatabase
+    var db: AppDatabase,
 )
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class, DelicateCoroutinesApi::class)
 @Composable
-fun NoteEditor(noteId: Int = 0,  title: String = "", content: String = "", updating: Boolean = false, navController: NavController, db: AppDatabase) {
+fun NoteEditor(
+    noteId: Int = 0,
+    title: String = "",
+    content: String = "",
+    updating: Boolean = false,
+    navController: NavController,
+    db: AppDatabase,
+) {
     var title = remember { mutableStateOf(title) }
     var content = remember { mutableStateOf(content) }
     val scope = rememberCoroutineScope()
@@ -75,6 +83,7 @@ fun NoteEditor(noteId: Int = 0,  title: String = "", content: String = "", updat
 
     BackHandler {
         insertOrUpdateNote(props = noteEditorProps)
+        navController.popBackStack()
     }
 
     Scaffold(
@@ -82,7 +91,7 @@ fun NoteEditor(noteId: Int = 0,  title: String = "", content: String = "", updat
             ExtendedFloatingActionButton(
                 text = {
                     Text(
-                        text = if(updating) "Update" else "Save"
+                        text = if (updating) "Update" else "Save"
                     )
                 },
                 icon = {
@@ -122,6 +131,25 @@ fun NoteEditor(noteId: Int = 0,  title: String = "", content: String = "", updat
                             imageVector = Icons.Filled.ArrowBack,
                             contentDescription = "Arrow Back"
                         )
+                    }
+                },
+                actions = {
+                    IconButton(
+                        onClick = {
+                            scope.launch {
+                                db.noteDao().delete(
+                                    Note(
+                                        id = noteId,
+                                        title = title.toString(),
+                                        content = content.toString()
+                                    )
+                                )
+
+                                navController.popBackStack()
+                            }
+                        }
+                    ) {
+                        Icon(imageVector = Icons.Filled.Delete, contentDescription = "Delete")
                     }
                 }
             )
@@ -175,20 +203,27 @@ fun NoteEditor(noteId: Int = 0,  title: String = "", content: String = "", updat
 }
 
 fun insertOrUpdateNote(props: NoteEditorProps) {
-    if(props.updating) {
-        if(props.title.value.isNotEmpty() || props.content.value.isNotEmpty()) {
+    if (props.updating) {
+        if (props.title.value.isNotEmpty() || props.content.value.isNotEmpty()) {
             props.scope.launch {
                 props.db.noteDao().update(
-                    Note(id = props.noteId, title = props.title.value, content = props.content.value)
+                    Note(
+                        id = props.noteId,
+                        title = props.title.value,
+                        content = props.content.value
+                    )
                 )
 
                 withContext(Dispatchers.Main) {
-                    showToast(context = props.context, text = "Note Updated " + props.noteId.toString())
+                    showToast(
+                        context = props.context,
+                        text = "Note Updated " + props.noteId.toString()
+                    )
                 }
             }
         }
     } else {
-        if(props.title.value.isNotEmpty() || props.content.value.isNotEmpty()) {
+        if (props.title.value.isNotEmpty() || props.content.value.isNotEmpty()) {
             props.scope.launch {
                 props.db.noteDao().insert(
                     Note(title = props.title.value, content = props.content.value)

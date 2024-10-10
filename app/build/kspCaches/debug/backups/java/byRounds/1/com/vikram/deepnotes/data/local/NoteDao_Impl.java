@@ -94,13 +94,13 @@ public final class NoteDao_Impl implements NoteDao {
   }
 
   @Override
-  public Object insert(final Note user, final Continuation<? super Unit> continuation) {
+  public Object insert(final Note note, final Continuation<? super Unit> continuation) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
         __db.beginTransaction();
         try {
-          __insertionAdapterOfNote.insert(user);
+          __insertionAdapterOfNote.insert(note);
           __db.setTransactionSuccessful();
           return Unit.INSTANCE;
         } finally {
@@ -111,13 +111,13 @@ public final class NoteDao_Impl implements NoteDao {
   }
 
   @Override
-  public Object delete(final Note user, final Continuation<? super Unit> continuation) {
+  public Object delete(final Note note, final Continuation<? super Unit> continuation) {
     return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
       @Override
       public Unit call() throws Exception {
         __db.beginTransaction();
         try {
-          __deletionAdapterOfNote.handle(user);
+          __deletionAdapterOfNote.handle(note);
           __db.setTransactionSuccessful();
           return Unit.INSTANCE;
         } finally {
