@@ -1,6 +1,8 @@
 package com.vikram.deepnotes
 
 import android.annotation.SuppressLint
+import android.content.Context
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -19,8 +21,10 @@ import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
@@ -35,9 +39,19 @@ import com.vikram.deepnotes.data.local.Note
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+
+data class NoteEditorProps(
+    var noteId: Int,
+    var title: MutableState<String>,
+    var content: MutableState<String>,
+    var scope: CoroutineScope,
+    var context: Context,
+    var updating: Boolean = false,
+    var navController: NavController,
+    var db: AppDatabase
+)
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class, DelicateCoroutinesApi::class)
@@ -45,8 +59,23 @@ import kotlinx.coroutines.withContext
 fun NoteEditor(noteId: Int = 0,  title: String = "", content: String = "", updating: Boolean = false, navController: NavController, db: AppDatabase) {
     var title = remember { mutableStateOf(title) }
     var content = remember { mutableStateOf(content) }
-    val scope = CoroutineScope(GlobalScope.coroutineContext)
+    val scope = rememberCoroutineScope()
     val context = LocalContext.current
+
+    var noteEditorProps = NoteEditorProps(
+        noteId = noteId,
+        title = title,
+        content = content,
+        scope = scope,
+        context = context,
+        updating = updating,
+        navController = navController,
+        db = db
+    )
+
+    BackHandler {
+        insertOrUpdateNote(props = noteEditorProps)
+    }
 
     Scaffold(
         floatingActionButton = {
@@ -63,32 +92,7 @@ fun NoteEditor(noteId: Int = 0,  title: String = "", content: String = "", updat
                     )
                 },
                 onClick = {
-                    if(updating) {
-                        if(title.value.isNotEmpty() && content.value.isNotEmpty()) {
-                            scope.launch {
-                                db.noteDao().update(
-                                    Note(id = noteId, title = title.value, content = content.value)
-                                )
-
-                                withContext(Dispatchers.Main) {
-                                    showToast(context = context, text = "Note Updated " + noteId.toString())
-                                }
-                            }
-                        }
-                    } else {
-                        if(title.value.isNotEmpty() && content.value.isNotEmpty()) {
-                            scope.launch {
-                                db.noteDao().insert(
-                                    Note(title = title.value, content = content.value)
-                                )
-
-                                withContext(Dispatchers.Main) {
-                                    showToast(context = context, text = "Note Saved")
-                                }
-                            }
-                        }
-                    }
-
+                    insertOrUpdateNote(props = noteEditorProps)
                     navController.popBackStack()
                 }
             )
@@ -166,6 +170,34 @@ fun NoteEditor(noteId: Int = 0,  title: String = "", content: String = "", updat
                 ),
                 shape = RectangleShape
             )
+        }
+    }
+}
+
+fun insertOrUpdateNote(props: NoteEditorProps) {
+    if(props.updating) {
+        if(props.title.value.isNotEmpty() || props.content.value.isNotEmpty()) {
+            props.scope.launch {
+                props.db.noteDao().update(
+                    Note(id = props.noteId, title = props.title.value, content = props.content.value)
+                )
+
+                withContext(Dispatchers.Main) {
+                    showToast(context = props.context, text = "Note Updated " + props.noteId.toString())
+                }
+            }
+        }
+    } else {
+        if(props.title.value.isNotEmpty() || props.content.value.isNotEmpty()) {
+            props.scope.launch {
+                props.db.noteDao().insert(
+                    Note(title = props.title.value, content = props.content.value)
+                )
+
+                withContext(Dispatchers.Main) {
+                    showToast(context = props.context, text = "Note Saved")
+                }
+            }
         }
     }
 }

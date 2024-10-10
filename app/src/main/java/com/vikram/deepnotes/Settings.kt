@@ -1,5 +1,6 @@
 package com.vikram.deepnotes
 
+import android.R.attr.value
 import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -29,24 +30,38 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontVariation.Setting
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
+
+data class SettingsProps(
+    var showSettingsDialog: MutableState<Boolean>,
+    var navController: NavController,
+    var currentTheme: MutableState<Theme>
+)
 
 @Suppress("DEPRECATION")
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun Settings(navController: NavController, currentTheme: MutableState<Theme>) {
-    var showDialog = remember {
+    var showSettingsDialog = remember {
         mutableStateOf(false)
     }
 
-    if (showDialog.value) {
-        SettingThemeDialog(showDialog = showDialog, currentTheme = currentTheme)
+    var settingsProps = SettingsProps(
+        showSettingsDialog = showSettingsDialog,
+        navController = navController,
+        currentTheme = currentTheme
+    )
+
+    if (showSettingsDialog.value) {
+        ShowThemeDialog(settingsProps)
     }
 
     Column(
@@ -80,14 +95,14 @@ fun Settings(navController: NavController, currentTheme: MutableState<Theme>) {
                 .fillMaxSize()
                 .padding(10.dp)
         ) {
-            SettingTheme(currentTheme, showDialog)
+            SettingTheme(settingsProps)
         }
     }
 }
 
 
 @Composable
-fun SettingTheme(currentTheme: MutableState<Theme>, showDialog: MutableState<Boolean>) {
+fun SettingTheme(props: SettingsProps) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -112,13 +127,13 @@ fun SettingTheme(currentTheme: MutableState<Theme>, showDialog: MutableState<Boo
             modifier = Modifier
                 .clip(RoundedCornerShape(30.dp)),
             onClick = {
-                if (!showDialog.value) {
-                    showDialog.value = true
+                if (!props.showSettingsDialog.value) {
+                    props.showSettingsDialog.value = true
                 }
             }
         ) {
             Text(
-                text = currentTheme.value.theme,
+                text = props.currentTheme.value.theme,
                 style = TextStyle(
                     fontSize = 18.sp
                 )
@@ -128,10 +143,10 @@ fun SettingTheme(currentTheme: MutableState<Theme>, showDialog: MutableState<Boo
 }
 
 @Composable
-fun SettingThemeDialog(showDialog: MutableState<Boolean>, currentTheme: MutableState<Theme>) {
+fun ShowThemeDialog(props: SettingsProps) {
     Dialog(
         onDismissRequest = {
-            showDialog.value = false
+            props.showSettingsDialog.value = false
         }
     ) {
         Column(
@@ -143,21 +158,21 @@ fun SettingThemeDialog(showDialog: MutableState<Boolean>, currentTheme: MutableS
         ) {
             ThemeOption(
                 name = "System Theme",
-                currentTheme = currentTheme,
+                currentTheme = props.currentTheme,
                 selectedTheme = Theme.SYSTEM_THEME,
-                showDialog = showDialog
+                showDialog = props.showSettingsDialog
             )
             ThemeOption(
                 name = "Dark Theme",
-                currentTheme = currentTheme,
+                currentTheme = props.currentTheme,
                 selectedTheme = Theme.DARK_THEME,
-                showDialog = showDialog
+                showDialog = props.showSettingsDialog
             )
             ThemeOption(
                 name = "Light Theme",
-                currentTheme = currentTheme,
-                selectedTheme = Theme.LIGHT_THEME,
-                showDialog = showDialog
+                currentTheme = props.currentTheme,
+                selectedTheme = Theme.DARK_THEME,
+                showDialog = props.showSettingsDialog
             )
         }
     }
@@ -209,5 +224,13 @@ fun SettingsPreview() {
         mutableStateOf(false)
     }
 
-    SettingTheme(currentTheme, showDialog)
+    var navController: NavController = rememberNavController()
+
+    var noteEditorProps = SettingsProps(
+        currentTheme = currentTheme,
+        showSettingsDialog = showDialog,
+        navController = navController
+    )
+
+    Settings(navController, currentTheme)
 }
