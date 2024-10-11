@@ -19,3 +19,4 @@ build/kotlin
 build/kspCaches
 build/tmp
 build/outputs/logs
+/build/kotlin/
