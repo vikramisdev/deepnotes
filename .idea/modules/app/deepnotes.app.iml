@@ -2,10 +2,12 @@
 <module version="4">
   <component name="AdditionalModuleElements">
     <content url="file://$MODULE_DIR$/../../../app" dumb="true">
+      <excludeFolder url="file://$MODULE_DIR$/../../../app/build/generated" />
       <excludeFolder url="file://$MODULE_DIR$/../../../app/build/generated/ap_generated_sources" />
       <excludeFolder url="file://$MODULE_DIR$/../../../app/build/generated/ksp/debugAndroidTest" />
       <excludeFolder url="file://$MODULE_DIR$/../../../app/build/generated/ksp/debugUnitTest" />
       <excludeFolder url="file://$MODULE_DIR$/../../../app/build/generated/res" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../app/build/intermediates" />
       <excludeFolder url="file://$MODULE_DIR$/../../../app/build/intermediates/aar_metadata_check" />
       <excludeFolder url="file://$MODULE_DIR$/../../../app/build/intermediates/assets" />
       <excludeFolder url="file://$MODULE_DIR$/../../../app/build/intermediates/compressed_assets" />
@@ -65,9 +67,15 @@
       <excludeFolder url="file://$MODULE_DIR$/../../../app/build/intermediates/sub_project_dex_archive" />
       <excludeFolder url="file://$MODULE_DIR$/../../../app/build/intermediates/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/../../../app/build/intermediates/validate_signing_config" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../app/build/kotlin/kspDebugAndroidTestKotlin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../app/build/kotlin/kspDebugKotlin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../app/build/kotlin/kspDebugUnitTestKotlin" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../app/build/kspCaches" />
       <excludeFolder url="file://$MODULE_DIR$/../../../app/build/kspCaches/debug/logs" />
       <excludeFolder url="file://$MODULE_DIR$/../../../app/build/kspCaches/debugAndroidTest/logs" />
       <excludeFolder url="file://$MODULE_DIR$/../../../app/build/kspCaches/debugUnitTest/logs" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../app/build/outputs/logs" />
+      <excludeFolder url="file://$MODULE_DIR$/../../../app/build/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/../../../app/build/tmp/compileDebugJavaWithJavac/compileTransaction" />
     </content>
   </component>

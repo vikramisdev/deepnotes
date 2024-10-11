@@ -15,6 +15,7 @@
 local.properties
 build/generated
 build/intermediates
+build/kotlin
 build/kspCaches
 build/tmp
 build/outputs/logs
