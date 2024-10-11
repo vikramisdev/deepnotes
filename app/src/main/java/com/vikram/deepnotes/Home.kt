@@ -3,14 +3,18 @@ package com.vikram.deepnotes
 import android.annotation.SuppressLint
 import android.net.Uri
 import android.util.Log
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.detectHorizontalDragGestures
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
@@ -37,13 +41,16 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
@@ -51,14 +58,14 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.vikram.deepnotes.data.local.AppDatabase
 import com.vikram.deepnotes.data.local.Note
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlin.math.roundToInt
 
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun Home(navController: NavController, db: AppDatabase) {
-    val scope = CoroutineScope(Dispatchers.Default)
+    val scope = rememberCoroutineScope()
     val context = LocalContext.current
     val maxLineLimit = 10
 
@@ -66,6 +73,7 @@ fun Home(navController: NavController, db: AppDatabase) {
     var searchBarActive = remember { mutableStateOf(false) }
     var showProfileDialog = remember { mutableStateOf(false) }
     val notesList = remember { mutableStateOf<List<Note>>(emptyList()) }
+
 
     if (showProfileDialog.value) {
         ShowProfileDialog(showProfileDialog, navController)
@@ -212,7 +220,7 @@ fun Home(navController: NavController, db: AppDatabase) {
                     verticalArrangement = Arrangement.Center
                 ) {
                     Text(
-                        text = "Loading Notes ...",
+                        text = "No Notes",
                         fontSize = 20.sp
                     )
                 }
@@ -220,13 +228,14 @@ fun Home(navController: NavController, db: AppDatabase) {
                 LazyVerticalStaggeredGrid(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(10.dp, 10.dp),
+                        .padding(10.dp),
                     columns = StaggeredGridCells.Fixed(2),
                     verticalItemSpacing = 10.dp,
                     horizontalArrangement = Arrangement.spacedBy(10.dp),
                     content = {
                         items(notesList.value.size) { index ->
-                            var note = notesList.value[index]
+                            val note = notesList.value[index]
+                            val offsetX = remember { Animatable(0f) }
 
                             Column(
                                 modifier = Modifier
@@ -239,10 +248,44 @@ fun Home(navController: NavController, db: AppDatabase) {
                                                     Uri.encode(
                                                         note.title
                                                     )
-                                                }&content=${Uri.encode(note.content)}&updating=${true}"
+                                                }&content=${Uri.encode(note.content)}&updating=true"
                                             )
                                         }
                                     )
+                                    .pointerInput(Unit) {
+                                        detectHorizontalDragGestures(
+                                            onDragEnd = {
+                                                // Animate back to the original position
+                                                scope.launch {
+                                                    offsetX.animateTo(
+                                                        0f,
+                                                        animationSpec = tween(300)
+                                                    )
+                                                }
+                                            }
+                                        ) { change, dragAmount ->
+                                            // Update the offset while dragging
+                                            scope.launch {
+                                                val newOffset = offsetX.value + dragAmount
+                                                if (newOffset > 250) { // Swipe threshold to delete
+                                                    // Delete from database
+                                                    db
+                                                        .noteDao()
+                                                        .delete(note)
+                                                    // reload the list
+                                                    loadNotes(db, notesList)
+                                                } else {
+                                                    offsetX.snapTo(
+                                                        newOffset.coerceIn(
+                                                            0f,
+                                                            300f
+                                                        )
+                                                    )
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .offset { IntOffset(offsetX.value.roundToInt(), 0) }
                                     .border(
                                         1.dp,
                                         MaterialTheme.colorScheme.onBackground,

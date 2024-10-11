@@ -157,9 +157,9 @@ fun ShowThemeDialog(props: SettingsProps) {
                 .fillMaxWidth()
         ) {
             ThemeOption(
-                name = "System Theme",
+                name = "Light Theme",
                 currentTheme = props.currentTheme,
-                selectedTheme = Theme.SYSTEM_THEME,
+                selectedTheme = Theme.LIGHT_THEME,
                 showDialog = props.showSettingsDialog
             )
             ThemeOption(
@@ -169,9 +169,9 @@ fun ShowThemeDialog(props: SettingsProps) {
                 showDialog = props.showSettingsDialog
             )
             ThemeOption(
-                name = "Light Theme",
+                name = "System Theme",
                 currentTheme = props.currentTheme,
-                selectedTheme = Theme.DARK_THEME,
+                selectedTheme = Theme.SYSTEM_THEME,
                 showDialog = props.showSettingsDialog
             )
         }
