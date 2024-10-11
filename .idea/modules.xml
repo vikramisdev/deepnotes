@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/deepnotes.iml" filepath="$PROJECT_DIR$/.idea/deepnotes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/deepnotes.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/deepnotes.app.iml" />
     </modules>
   </component>
 </project>

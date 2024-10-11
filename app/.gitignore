@@ -13,3 +13,8 @@
 .externalNativeBuild
 .cxx
 local.properties
+build/generated
+build/intermediates
+build/kspCaches
+build/tmp
+build/outputs/logs
