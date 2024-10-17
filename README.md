@@ -16,3 +16,6 @@
 - [ ] Remainders
 - [ ] Tasks
 - [ ] Font Size Settings
+
+# Downloads
+<a href="https://github.com/vikramisdev/deepnotes/raw/refs/heads/master/app/build/outputs/apk/debug/app-debug.apk"><img src="https://github.com/user-attachments/assets/b2896a46-27fa-4a7b-9157-d2a9e54e36c4" alt="download" width="140" height="50" /></a>
