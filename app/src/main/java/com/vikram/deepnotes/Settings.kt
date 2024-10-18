@@ -1,6 +1,5 @@
 package com.vikram.deepnotes
 
-import android.R.attr.value
 import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -24,44 +23,21 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontVariation.Setting
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
-import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
-
-
-data class SettingsProps(
-    var showSettingsDialog: MutableState<Boolean>,
-    var navController: NavController,
-    var currentTheme: MutableState<Theme>
-)
 
 @Suppress("DEPRECATION")
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun Settings(navController: NavController, currentTheme: MutableState<Theme>) {
-    var showSettingsDialog = remember {
-        mutableStateOf(false)
-    }
-
-    var settingsProps = SettingsProps(
-        showSettingsDialog = showSettingsDialog,
-        navController = navController,
-        currentTheme = currentTheme
-    )
-
-    if (showSettingsDialog.value) {
-        ShowThemeDialog(settingsProps)
+fun Settings(props: GlobalProps) {
+    if (props.showSettingsDialog.value) {
+        ShowThemeDialog(props)
     }
 
     Column(
@@ -80,7 +56,7 @@ fun Settings(navController: NavController, currentTheme: MutableState<Theme>) {
             },
             navigationIcon = {
                 IconButton(onClick = {
-                    navController.popBackStack()
+                    props.navController.popBackStack()
                 }) {
                     Icon(
                         imageVector = Icons.Filled.ArrowBack,
@@ -95,14 +71,14 @@ fun Settings(navController: NavController, currentTheme: MutableState<Theme>) {
                 .fillMaxSize()
                 .padding(10.dp)
         ) {
-            SettingTheme(settingsProps)
+            SettingTheme(props)
         }
     }
 }
 
 
 @Composable
-fun SettingTheme(props: SettingsProps) {
+fun SettingTheme(props: GlobalProps) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -132,8 +108,9 @@ fun SettingTheme(props: SettingsProps) {
                 }
             }
         ) {
+            @Suppress("DEPRECATION")
             Text(
-                text = props.currentTheme.value.theme,
+                text = props.currentTheme.value.toString().replace("_", " ").capitalize(),
                 style = TextStyle(
                     fontSize = 18.sp
                 )
@@ -143,7 +120,7 @@ fun SettingTheme(props: SettingsProps) {
 }
 
 @Composable
-fun ShowThemeDialog(props: SettingsProps) {
+fun ShowThemeDialog(props: GlobalProps) {
     Dialog(
         onDismissRequest = {
             props.showSettingsDialog.value = false
@@ -181,7 +158,7 @@ fun ShowThemeDialog(props: SettingsProps) {
 @Composable
 fun ThemeOption(
     name: String,
-    currentTheme: MutableState<Theme>,
+    currentTheme: MutableState<String>,
     selectedTheme: Theme,
     showDialog: MutableState<Boolean>,
 ) {
@@ -193,44 +170,18 @@ fun ThemeOption(
                 true,
                 onClick = {
                     showDialog.value = false
-                    currentTheme.value = selectedTheme
+                    currentTheme.value = selectedTheme.toString()
                 }
             ),
         verticalAlignment = Alignment.CenterVertically
     ) {
-        RadioButton(selected = currentTheme.value === selectedTheme, onClick = {
+        RadioButton(selected = currentTheme.value == selectedTheme.name, onClick = {
             showDialog.value = false
-            currentTheme.value = selectedTheme
+            currentTheme.value = selectedTheme.toString()
         })
         Text(
             text = name,
             color = MaterialTheme.colorScheme.onBackground
         )
     }
-}
-
-
-@Preview
-@Composable
-fun SettingsPreview() {
-//    var navController = rememberNavController()
-//    Settings(navController)
-
-    var currentTheme = remember {
-        mutableStateOf(Theme.SYSTEM_THEME)
-    }
-
-    var showDialog = remember {
-        mutableStateOf(false)
-    }
-
-    var navController: NavController = rememberNavController()
-
-    var noteEditorProps = SettingsProps(
-        currentTheme = currentTheme,
-        showSettingsDialog = showDialog,
-        navController = navController
-    )
-
-    Settings(navController, currentTheme)
 }

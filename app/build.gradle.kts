@@ -3,11 +3,12 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.ksp)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.google.services)
 }
 
 android {
     namespace = "com.vikram.deepnotes"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.vikram.deepnotes"
@@ -46,7 +47,9 @@ android {
     }
     packaging {
         resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes += "/META-INF/DEPENDENCIES"
+            excludes += "/META-INF/LICENSE"
+            excludes += "/META-INF/NOTICE"
         }
     }
 }
@@ -68,6 +71,24 @@ dependencies {
     implementation(libs.androidx.room.ktx)
     implementation(libs.androidx.room.runtime)
     ksp(libs.androidx.room.compiler)
+
+    // Firebase BoM and Authentication
+    implementation(platform(libs.firebase.bom)) // Firebase BoM
+    implementation(libs.firebase.auth.ktx) // Firebase Authentication
+    implementation(libs.play.services.auth) // Google Sign-In
+    implementation(libs.play.services.drive) // Google Drive (if needed)
+    implementation("androidx.credentials:credentials-play-services-auth:1.5.0-alpha06")
+    implementation("com.google.android.libraries.identity.googleid:googleid:1.1.1")
+
+    // todo
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1")
+    implementation("androidx.datastore:datastore-preferences-rxjava2:1.0.0")
+    implementation("androidx.datastore:datastore-preferences-rxjava3:1.0.0")
+    implementation("com.google.api-client:google-api-client-android:1.33.2")
+    implementation("com.google.api-client:google-api-client-gson:1.33.2")
+    implementation("com.google.apis:google-api-services-drive:v3-rev136-1.25.0")
+    //implementation("com.google.api-client:google-api-client:1.33.2")
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

@@ -31,7 +31,7 @@ private val LightColorScheme = lightColorScheme(
 @RequiresApi(Build.VERSION_CODES.S)
 @Composable
 fun DeepNotesTheme(
-    theme: MutableState<Theme>,
+    theme: MutableState<String>,
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit,
@@ -39,11 +39,11 @@ fun DeepNotesTheme(
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
             val context = LocalContext.current
-            if (theme.value === Theme.DARK_THEME) {
+            if (theme.value === Theme.DARK_THEME.toString()) {
                 dynamicDarkColorScheme(context)
-            } else if (theme.value === Theme.LIGHT_THEME) {
+            } else if (theme.value === Theme.LIGHT_THEME.toString()) {
                 dynamicLightColorScheme(context)
-            } else if (theme.value === Theme.SYSTEM_THEME) {
+            } else if (theme.value === Theme.SYSTEM_THEME.toString()) {
                 if (isSystemInDarkTheme()) dynamicDarkColorScheme(context) else dynamicLightColorScheme(
                     context
                 )
@@ -54,9 +54,9 @@ fun DeepNotesTheme(
             }
         }
 
-        theme.value === Theme.DARK_THEME -> DarkColorScheme
-        theme.value === Theme.LIGHT_THEME -> LightColorScheme
-        theme.value === Theme.SYSTEM_THEME -> {
+        theme.value === Theme.DARK_THEME.toString() -> DarkColorScheme
+        theme.value === Theme.LIGHT_THEME.toString() -> LightColorScheme
+        theme.value === Theme.SYSTEM_THEME.toString() -> {
             val context = LocalContext.current
             if (isSystemInDarkTheme()) DarkColorScheme else LightColorScheme
         }

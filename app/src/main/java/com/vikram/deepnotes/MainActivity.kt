@@ -1,6 +1,6 @@
 package com.vikram.deepnotes
 
-import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -17,61 +17,108 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.vikram.deepnotes.data.local.AppDatabase
+import com.vikram.deepnotes.data.local.Note
 import com.vikram.deepnotes.ui.theme.DeepNotesTheme
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
+
+
+data class GlobalProps(
+    val context: Context,
+    val scope: CoroutineScope,
+    val navController: NavController,
+    val currentTheme: MutableState<String>,
+    val db: AppDatabase,
+    val maxNoteLineLimit: Int,
+    val searchBarQuery: MutableState<String>,
+    val isSearchBarActive: MutableState<Boolean>,
+    val showProfileDialog: MutableState<Boolean>,
+    val notesList: MutableState<List<Note>>,
+    var noteId: MutableState<Int>,
+    var title: MutableState<String>,
+    var content: MutableState<String>,
+    var updating: MutableState<Boolean>,
+    var showSettingsDialog: MutableState<Boolean>,
+)
 
 class MainActivity : ComponentActivity() {
     @RequiresApi(Build.VERSION_CODES.S)
-    @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         enableEdgeToEdge()
         setContent {
-            Root()
+            val db = AppDatabase.getDatabase(this)
+            val scope = rememberCoroutineScope()
+
+            val props = GlobalProps(
+                context = this,
+                scope = scope,
+                navController = rememberNavController(),
+                currentTheme = remember {
+                    mutableStateOf(Theme.SYSTEM_THEME.toString())
+                },
+                db = db,
+                maxNoteLineLimit = 10,
+                searchBarQuery = remember {
+                    mutableStateOf("")
+                },
+                isSearchBarActive = remember {
+                    mutableStateOf(false)
+                },
+                showProfileDialog = remember {
+                    mutableStateOf(false)
+                },
+                notesList = remember {
+                    mutableStateOf<List<Note>>(emptyList())
+                },
+                noteId = remember {
+                    mutableStateOf(0)
+                },
+                title = remember {
+                    mutableStateOf("")
+                },
+                content = remember {
+                    mutableStateOf("")
+                },
+                updating = remember {
+                    mutableStateOf(false)
+                },
+                showSettingsDialog = remember {
+                    mutableStateOf(false)
+                }
+            )
+
+            MainComposable(props)
         }
     }
 }
 
-@OptIn(DelicateCoroutinesApi::class, ExperimentalAnimationApi::class)
 @RequiresApi(Build.VERSION_CODES.S)
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter", "CoroutineCreationDuringComposition")
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun Root() {
-    val context = LocalContext.current
-    val coroutineContext = GlobalScope.coroutineContext
-    val db = AppDatabase.getDatabase(context)
-    val scope = CoroutineScope(Dispatchers.Default)
-    val navController = rememberNavController()
-
-    var currentTheme = remember {
-        mutableStateOf(Theme.SYSTEM_THEME)
-    }
-    var notesSize = remember {
-        mutableIntStateOf(0)
-    }
+fun MainComposable(props: GlobalProps) {
 
     DeepNotesTheme(
-        theme = currentTheme
+        theme = props.currentTheme
     ) {
         Surface(
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.surface
         ) {
+            @Suppress("DEPRECATION")
             AnimatedNavHost(
-                navController = navController,
+                navController = props.navController as NavHostController,
                 startDestination = "home",
                 enterTransition = {
                     slideInHorizontally(initialOffsetX = { 1000 }) + fadeIn(
@@ -102,37 +149,21 @@ fun Root() {
                     )
                 }
             ) {
-                composable("home") {
-                    Home(navController, db)
-                }
-                composable("settings") { Settings(navController, currentTheme) }
-                composable("about") { About(navController) }
+                composable("home") { Home(props) }
+                composable("settings") { Settings(props) }
+                composable("about") { About(props) }
 
                 // Route with parameters
                 composable("noteEditor?noteId={noteId}&title={title}&content={content}&updating={updating}") { backStackEntry ->
-                    val noteId = backStackEntry.arguments?.getString(("noteId")) ?: "0"
-                    val title = backStackEntry.arguments?.getString("title") ?: ""
-                    val content = backStackEntry.arguments?.getString("content") ?: ""
-                    val updating =
+                    props.noteId.value = backStackEntry.arguments?.getString(("noteId"))?.toInt() ?: 0
+                    props.title.value = backStackEntry.arguments?.getString("title") ?: ""
+                    props.content.value = backStackEntry.arguments?.getString("content") ?: ""
+                    props.updating.value =
                         backStackEntry.arguments?.getString("updating")?.toBoolean() ?: false
 
-                    NoteEditor(
-                        noteId = noteId.toInt(),
-                        title = title,
-                        updating = updating,
-                        content = content,
-                        navController = navController,
-                        db = db
-                    )
+                    NoteEditor(props)
                 }
             }
         }
     }
-}
-
-@RequiresApi(Build.VERSION_CODES.S)
-@Preview
-@Composable
-fun RootPreview() {
-    Root()
 }

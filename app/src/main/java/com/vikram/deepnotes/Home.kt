@@ -2,7 +2,9 @@ package com.vikram.deepnotes
 
 import android.annotation.SuppressLint
 import android.net.Uri
+import android.os.Build
 import android.util.Log
+import androidx.annotation.RequiresApi
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
@@ -21,9 +23,9 @@ import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
 import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Settings
@@ -39,54 +41,41 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.pointer.pointerInput
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
 import com.vikram.deepnotes.data.local.AppDatabase
 import com.vikram.deepnotes.data.local.Note
 import kotlinx.coroutines.launch
 import kotlin.math.roundToInt
 
+
+@RequiresApi(Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun Home(navController: NavController, db: AppDatabase) {
-    val scope = rememberCoroutineScope()
-    val context = LocalContext.current
-    val maxLineLimit = 10
-
-    var query = remember { mutableStateOf("") }
-    var searchBarActive = remember { mutableStateOf(false) }
-    var showProfileDialog = remember { mutableStateOf(false) }
-    val notesList = remember { mutableStateOf<List<Note>>(emptyList()) }
-
-
-    if (showProfileDialog.value) {
-        ShowProfileDialog(showProfileDialog, navController)
+fun Home(props: GlobalProps) {
+    if(props.showProfileDialog.value) {
+        ShowProfileDialog(props.showProfileDialog, props.navController)
     }
 
-    LaunchedEffect(notesList.value.size) {
-        loadNotes(db, notesList)
+    LaunchedEffect(props.notesList.value.size) {
+        loadNotes(props.db, props.notesList)
     }
 
     Scaffold(
         floatingActionButton = {
             ExtendedFloatingActionButton(
-                onClick = { navController.navigate("noteEditor") },
+                onClick = { props.navController.navigate("noteEditor") },
                 modifier = Modifier
                     .padding(10.dp),
                 text = {
@@ -111,9 +100,9 @@ fun Home(navController: NavController, db: AppDatabase) {
         ) {
             // note searchbar
             SearchBar(
-                query = query.value,
+                query = props.searchBarQuery.value,
                 onQueryChange = {
-                    query.value = it
+                    props.searchBarQuery.value = it
                 },
                 onSearch = {
                     // Handle search action here
@@ -121,33 +110,33 @@ fun Home(navController: NavController, db: AppDatabase) {
                 placeholder = {
                     Text(text = "Search Notes")
                 },
-                active = searchBarActive.value,
+                active = props.isSearchBarActive.value,
                 onActiveChange = {
-                    searchBarActive.value = it
-                    if (searchBarActive.value) {
-                        query.value = ""
+                    props.isSearchBarActive.value = it
+                    if (props.isSearchBarActive.value) {
+                        props.searchBarQuery.value = ""
                     }
                 },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(if (!searchBarActive.value) 10.dp else 0.dp),
+                    .padding(if (!props.isSearchBarActive.value) 10.dp else 0.dp),
                 leadingIcon = {
                     IconButton(
                         onClick = {
-                            searchBarActive.value = !searchBarActive.value
+                            props.isSearchBarActive.value = !props.isSearchBarActive.value
                         }
                     ) {
                         Icon(
-                            imageVector = if (searchBarActive.value) Icons.Filled.ArrowBack else Icons.Filled.Search,
+                            imageVector = if (props.isSearchBarActive.value) Icons.AutoMirrored.Filled.ArrowBack else Icons.Filled.Search,
                             contentDescription = "Search Icon"
                         )
                     }
                 },
                 trailingIcon = {
-                    if (!searchBarActive.value) {
+                    if (!props.isSearchBarActive.value) {
                         IconButton(
                             onClick = {
-                                showProfileDialog.value = true
+                                props.showProfileDialog.value = true
                             }
                         ) {
                             Icon(
@@ -158,61 +147,12 @@ fun Home(navController: NavController, db: AppDatabase) {
                     }
                 }
             ) {
-                LazyColumn(
-                    modifier = Modifier
-                        .fillMaxSize()
-                ) {
-                    items(notesList.value.size) { index ->
-                        var note = notesList.value[index]
-
-                        if (query.value.isNotEmpty() && (note.title.toLowerCase()
-                                .contains(query.value.toLowerCase()) || note.content.toLowerCase()
-                                .contains(query.value.toLowerCase()))
-                        ) {
-                            Column(
-                                modifier = Modifier
-                                    .clickable(
-                                        true,
-                                        onClick = {
-                                            navController.navigate(
-                                                "noteEditor?noteId=${note.id}&title=${
-                                                    Uri.encode(
-                                                        note.title
-                                                    )
-                                                }&content=${Uri.encode(note.content)}&updating=${true}"
-                                            )
-                                        }
-                                    )
-                                    .padding(20.dp, 10.dp)
-                                    .fillMaxWidth()
-                            ) {
-                                Text(
-                                    text = note.title,
-                                    fontSize = 16.sp,
-                                    lineHeight = 25.sp,
-                                    maxLines = 1
-                                )
-                                Text(
-                                    text = note.content,
-                                    fontSize = 14.sp,
-                                    maxLines = 1,
-                                    overflow = TextOverflow.Ellipsis
-                                )
-
-
-                            }
-                            Divider(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                            )
-                        }
-                    }
-                }
+                SearchResults(props)
             }
 
 
             // this shows the notes
-            if (notesList.value.isEmpty()) {
+            if (props.notesList.value.isEmpty()) {
                 Column(
                     modifier = Modifier
                         .align(Alignment.CenterHorizontally)
@@ -233,8 +173,8 @@ fun Home(navController: NavController, db: AppDatabase) {
                     verticalItemSpacing = 10.dp,
                     horizontalArrangement = Arrangement.spacedBy(10.dp),
                     content = {
-                        items(notesList.value.size) { index ->
-                            val note = notesList.value[index]
+                        items(props.notesList.value.size) { index ->
+                            val note = props.notesList.value[index]
                             val offsetX = remember { Animatable(0f) }
 
                             Column(
@@ -243,7 +183,7 @@ fun Home(navController: NavController, db: AppDatabase) {
                                     .clickable(
                                         true,
                                         onClick = {
-                                            navController.navigate(
+                                            props.navController.navigate(
                                                 "noteEditor?noteId=${note.id}&title=${
                                                     Uri.encode(
                                                         note.title
@@ -256,7 +196,7 @@ fun Home(navController: NavController, db: AppDatabase) {
                                         detectHorizontalDragGestures(
                                             onDragEnd = {
                                                 // Animate back to the original position
-                                                scope.launch {
+                                                props.scope.launch {
                                                     offsetX.animateTo(
                                                         0f,
                                                         animationSpec = tween(300)
@@ -265,15 +205,15 @@ fun Home(navController: NavController, db: AppDatabase) {
                                             }
                                         ) { change, dragAmount ->
                                             // Update the offset while dragging
-                                            scope.launch {
+                                            props.scope.launch {
                                                 val newOffset = offsetX.value + dragAmount
                                                 if (newOffset > 250) { // Swipe threshold to delete
                                                     // Delete from database
-                                                    db
+                                                    props.db
                                                         .noteDao()
                                                         .delete(note)
                                                     // reload the list
-                                                    loadNotes(db, notesList)
+                                                    loadNotes(props.db, props.notesList)
                                                 } else {
                                                     offsetX.snapTo(
                                                         newOffset.coerceIn(
@@ -303,7 +243,7 @@ fun Home(navController: NavController, db: AppDatabase) {
                                 Text(
                                     text = note.content,
                                     fontSize = 14.sp,
-                                    maxLines = note.content.split(" ").size % maxLineLimit + 1,
+                                    maxLines = note.content.split(" ").size % props.maxNoteLineLimit + 1,
                                     overflow = TextOverflow.Ellipsis
                                 )
                             }
@@ -316,7 +256,65 @@ fun Home(navController: NavController, db: AppDatabase) {
 }
 
 @Composable
-fun ShowProfileDialog(showDialog: MutableState<Boolean>, navController: NavController) {
+fun SearchResults(props: GlobalProps) {
+    LazyColumn(
+        modifier = Modifier
+            .fillMaxSize()
+    ) {
+        items(props.notesList.value.size) { index ->
+            var note = props.notesList.value[index]
+
+            if (props.searchBarQuery.value.isNotEmpty() && (note.title.lowercase()
+                    .contains(props.searchBarQuery.value.lowercase()) || note.content.lowercase()
+                    .contains(props.searchBarQuery.value.lowercase()))
+            ) {
+                Column(
+                    modifier = Modifier
+                        .clickable(
+                            true,
+                            onClick = {
+                                props.navController.navigate(
+                                    "noteEditor?noteId=${note.id}&title=${
+                                        Uri.encode(
+                                            note.title
+                                        )
+                                    }&content=${Uri.encode(note.content)}&updating=${true}"
+                                )
+                            }
+                        )
+                        .padding(20.dp, 10.dp)
+                        .fillMaxWidth()
+                ) {
+                    Text(
+                        text = note.title,
+                        fontSize = 16.sp,
+                        lineHeight = 25.sp,
+                        maxLines = 1
+                    )
+                    Text(
+                        text = note.content,
+                        fontSize = 14.sp,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis
+                    )
+
+
+                }
+                Divider(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                )
+            }
+        }
+    }
+}
+
+@RequiresApi(Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
+@Composable
+fun ShowProfileDialog(
+    showDialog: MutableState<Boolean>,
+    navController: NavController,
+) {
     Dialog(
         onDismissRequest = {
             showDialog.value = false
@@ -338,6 +336,19 @@ fun ShowProfileDialog(showDialog: MutableState<Boolean>, navController: NavContr
                 modifier = Modifier
                     .padding(start = 10.dp, bottom = 15.dp),
                 color = MaterialTheme.colorScheme.onBackground
+            )
+
+            DialogButton(
+                text = "Sign In Google",
+                icon = {
+                    Icon(
+                        imageVector = Icons.Filled.AccountCircle,
+                        contentDescription = "Account",
+                        tint = MaterialTheme.colorScheme.onBackground
+                    )
+                },
+                onClick = {
+                }
             )
 
             DialogButton(
@@ -408,13 +419,4 @@ suspend fun loadNotes(db: AppDatabase, notesList: MutableState<List<Note>>) {
     } catch (e: Exception) {
         Log.e("LoadNotes", "Error loading notes: ${e.message}")
     }
-}
-
-@Preview
-@Composable
-fun HomePreview() {
-    val context = LocalContext.current
-    val db = AppDatabase.getDatabase(context)
-    var navController = rememberNavController()
-    Home(navController = navController, db)
 }

@@ -1,14 +1,13 @@
 package com.vikram.deepnotes
 
 import android.annotation.SuppressLint
-import android.content.Context
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -22,68 +21,26 @@ import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
-import com.vikram.deepnotes.data.local.AppDatabase
 import com.vikram.deepnotes.data.local.Note
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-data class NoteEditorProps(
-    var noteId: Int,
-    var title: MutableState<String>,
-    var content: MutableState<String>,
-    var scope: CoroutineScope,
-    var context: Context,
-    var updating: Boolean = false,
-    var navController: NavController,
-    var db: AppDatabase,
-)
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class, DelicateCoroutinesApi::class)
 @Composable
-fun NoteEditor(
-    noteId: Int = 0,
-    title: String = "",
-    content: String = "",
-    updating: Boolean = false,
-    navController: NavController,
-    db: AppDatabase,
-) {
-    var title = remember { mutableStateOf(title) }
-    var content = remember { mutableStateOf(content) }
-    val scope = rememberCoroutineScope()
-    val context = LocalContext.current
-
-    var noteEditorProps = NoteEditorProps(
-        noteId = noteId,
-        title = title,
-        content = content,
-        scope = scope,
-        context = context,
-        updating = updating,
-        navController = navController,
-        db = db
-    )
+fun NoteEditor(props: GlobalProps) {
 
     BackHandler {
-        insertOrUpdateNote(props = noteEditorProps)
-        navController.popBackStack()
+        insertOrUpdateNote(props = props)
+        props.navController.popBackStack()
     }
 
     Scaffold(
@@ -91,7 +48,7 @@ fun NoteEditor(
             ExtendedFloatingActionButton(
                 text = {
                     Text(
-                        text = if (updating) "Update" else "Save"
+                        text = if (props.updating.value) "Update" else "Save"
                     )
                 },
                 icon = {
@@ -101,8 +58,8 @@ fun NoteEditor(
                     )
                 },
                 onClick = {
-                    insertOrUpdateNote(props = noteEditorProps)
-                    navController.popBackStack()
+                    insertOrUpdateNote(props = props)
+                    props.navController.popBackStack()
                 }
             )
         }
@@ -125,10 +82,10 @@ fun NoteEditor(
                 },
                 navigationIcon = {
                     IconButton(onClick = {
-                        navController.popBackStack()
+                        props.navController.popBackStack()
                     }) {
                         Icon(
-                            imageVector = Icons.Filled.ArrowBack,
+                            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                             contentDescription = "Arrow Back"
                         )
                     }
@@ -136,16 +93,16 @@ fun NoteEditor(
                 actions = {
                     IconButton(
                         onClick = {
-                            scope.launch {
-                                db.noteDao().delete(
+                            props.scope.launch {
+                                props.db.noteDao().delete(
                                     Note(
-                                        id = noteId,
-                                        title = title.toString(),
-                                        content = content.toString()
+                                        id = props.noteId.value,
+                                        title = props.title.toString(),
+                                        content = props.content.toString()
                                     )
                                 )
 
-                                navController.popBackStack()
+                                props.navController.popBackStack()
                             }
                         }
                     ) {
@@ -156,12 +113,13 @@ fun NoteEditor(
 
             // title input field
 
+            @Suppress("DEPRECATION")
             TextField(
                 modifier = Modifier
                     .fillMaxWidth(),
-                value = title.value,
+                value = props.title.value,
                 onValueChange = { newText ->
-                    title.value = newText
+                    props.title.value = newText
                 },
                 placeholder = {
                     Text(text = "Title")
@@ -179,13 +137,14 @@ fun NoteEditor(
             )
 
             // content input field
+            @Suppress("DEPRECATION")
             TextField(
                 modifier = Modifier
                     .fillMaxWidth()
                     .weight(1f),
-                value = content.value,
+                value = props.content.value,
                 onValueChange = { newText ->
-                    content.value = newText
+                    props.content.value = newText
                 },
                 placeholder = {
                     Text(text = "Write Something ...")
@@ -202,13 +161,13 @@ fun NoteEditor(
     }
 }
 
-fun insertOrUpdateNote(props: NoteEditorProps) {
-    if (props.updating) {
+fun insertOrUpdateNote(props: GlobalProps) {
+    if (props.updating.value) {
         if (props.title.value.isNotEmpty() || props.content.value.isNotEmpty()) {
             props.scope.launch {
                 props.db.noteDao().update(
                     Note(
-                        id = props.noteId,
+                        id = props.noteId.value,
                         title = props.title.value,
                         content = props.content.value
                     )
@@ -217,7 +176,7 @@ fun insertOrUpdateNote(props: NoteEditorProps) {
                 withContext(Dispatchers.Main) {
                     showToast(
                         context = props.context,
-                        text = "Note Updated " + props.noteId.toString()
+                        text = "Note Updated " + props.noteId.value
                     )
                 }
             }
@@ -235,12 +194,4 @@ fun insertOrUpdateNote(props: NoteEditorProps) {
             }
         }
     }
-}
-
-@Preview
-@Composable
-fun NoteEditorPreview() {
-    var navController = rememberNavController()
-    var context = LocalContext.current
-    NoteEditor(navController = navController, db = AppDatabase.getDatabase(context))
 }

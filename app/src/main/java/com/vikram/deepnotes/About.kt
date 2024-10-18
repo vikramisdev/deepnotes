@@ -30,15 +30,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun About(navController: NavController) {
+fun About(props: GlobalProps) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -57,7 +54,7 @@ fun About(navController: NavController) {
             },
             navigationIcon = {
                 IconButton(onClick = {
-                    navController.popBackStack()
+                    props.navController.popBackStack()
                 }) {
                     Icon(
                         imageVector = Icons.Filled.ArrowBack,
@@ -114,11 +111,4 @@ fun About(navController: NavController) {
             }
         }
     }
-}
-
-@Preview
-@Composable
-fun AboutPreview() {
-    var navController = rememberNavController()
-    About(navController)
 }

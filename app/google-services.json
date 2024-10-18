@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "613030578576",
+    "project_id": "deep-notes-71382",
+    "storage_bucket": "deep-notes-71382.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613030578576:android:cc50ddab3ab5465b100b15",
+        "android_client_info": {
+          "package_name": "com.vikram.deepnotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "613030578576-sqn52f4dhm7rjasbef883ojpe94g2b2m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vikram.deepnotes",
+            "certificate_hash": "e351a2e46d65bf525508f34103052b60b3c1e8cb"
+          }
+        },
+        {
+          "client_id": "613030578576-2buavlhn762vg4tbuhdvb80s1ejncd00.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYsA5rMBaxm_G0V4NqnhkhA793PDsIp_g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "613030578576-2buavlhn762vg4tbuhdvb80s1ejncd00.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
