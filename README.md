@@ -3,6 +3,8 @@
 # Deep Notes
 - An android app that is written in kotlin using the jetpack compose library, Inspired by Google Keep Notes.
 
+## Debug Apk - [Download](https://github.com/vikramisdev/deepnotes/blob/master/app/build/outputs/apk/debug/app-debug.apk) 
+
 # Features
 - It uses the kotlin Room library to store the data.
 - Supports dynamic colors on Android 12+.
