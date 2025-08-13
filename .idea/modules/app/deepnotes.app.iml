@@ -79,4 +79,10 @@
       <excludeFolder url="file://$MODULE_DIR$/../../../app/build/tmp/compileDebugJavaWithJavac/compileTransaction" />
     </content>
   </component>
+  <component name="ModuleClassLoaderOverlays">
+    <paths>
+      <option value="C:\Users\vs423\AppData\Local\Temp\overlay13885907877701580519" />
+      <option value="C:\Users\vs423\AppData\Local\Temp\overlay4810151578013554099" />
+    </paths>
+  </component>
 </module>
